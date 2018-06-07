@@ -11,11 +11,17 @@ export function* watchSetLocale(): IterableIterator<ForkEffect> {
 
 export function* applyLocaleChange(action: SetLocale.Request): IterableIterator<CallEffect | PutEffect<SetLocale.Result>> {
     const locale = action.payload.locale;
+    const needsReload = yield call(isReloadNeeded, locale);
     try {
-        yield call(saveCurrentLocaleCode, locale.code);
-        yield put(setLocaleActions.success(locale));
-        if (yield call(isReloadNeeded, locale)) {
+        if (needsReload) {
+            yield call(saveCurrentLocaleCode, locale.code);
             yield call(reloadRTL, locale.isRTL);
+        } else {
+            // There is no reload needed and we want clear load screen asap so
+            // we will optimistically claim success.
+            yield put(setLocaleActions.success(locale));
+            // And let the save task run in background.
+            yield call(saveCurrentLocaleCode, locale.code);
         }
     } catch (e) {
         yield put(setLocaleActions.failure(e.message, locale));
