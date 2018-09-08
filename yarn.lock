@@ -6607,9 +6607,9 @@ react-native-collapsible@^0.12.0:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-dotenv@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-dotenv/-/react-native-dotenv-0.1.1.tgz#95a943dbaba24ddf50e95bd861e5a0c4ab03a38d"
+react-native-dotenv@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-dotenv/-/react-native-dotenv-0.2.0.tgz#311551cb6a35a3dcfede648bded55c0e3ece579d"
   dependencies:
     babel-plugin-dotenv "0.1.1"
 
