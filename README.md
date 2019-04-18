@@ -11,7 +11,7 @@ The client is implemented in react-native, using create-react-native-app, redux,
 With a fresh repository, this will get the application compiled and running on Expo:
 
 Install dependencies
-
+gheth
 ```
 yarn install
 ```
