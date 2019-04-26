@@ -22,6 +22,7 @@ const mapStateToProps = (store: Store, ownProps: OwnProps): ServiceListProps => 
     return {
         topic,
         taskServicesOrError: selectTaskServices(topic.id, store),
+        currentPath: ownProps.location.pathname,
     };
 };
 
