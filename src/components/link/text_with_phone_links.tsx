@@ -9,7 +9,7 @@ export interface TextWithPhoneLinksProps {
     readonly text: string;
     readonly currentPath: string;
     readonly linkContext: string;
-    readonly linkSource: string;
+    readonly linkType: string;
 }
 
 export const TextWithPhoneLinks: React.StatelessComponent<TextWithPhoneLinksProps> = (props: TextWithPhoneLinksProps): JSX.Element => {
@@ -28,7 +28,7 @@ export const TextWithPhoneLinks: React.StatelessComponent<TextWithPhoneLinksProp
                                 text={wordForSentence}
                                 currentPath={props.currentPath}
                                 linkContext={props.linkContext}
-                                linkSource={props.linkSource}
+                                linkType={props.linkType}
                             />
                         );
                     }

@@ -68,7 +68,7 @@ const renderPhoneNumbers = (phoneNumbers: ReadonlyArray<PhoneNumber>, currentPat
                 text={phoneNumber.phoneNumber}
                 currentPath={currentPath}
                 linkContext={serviceName}
-                linkSource={fieldLabel} />
+                linkType={fieldLabel} />
         );
         return (
             <View key={index} style={{ paddingVertical: 10 }} >
@@ -92,7 +92,7 @@ const renderWebsite = (website: string, currentPath: string, serviceName: string
                 text={website}
                 currentPath={currentPath}
                 linkContext={serviceName}
-                linkSource={'Website'}
+                linkType={'Website'}
                 style={textStyles.paragraphStyle}
             />
         </Text>
@@ -111,7 +111,7 @@ const renderEmail = (email: string, currentPath: string, serviceName: string): J
                 text={email}
                 currentPath={currentPath}
                 linkContext={serviceName}
-                linkSource={'Website'}
+                linkType={'Email'}
                 style={textStyles.paragraphStyle}
             />
         </Text>
